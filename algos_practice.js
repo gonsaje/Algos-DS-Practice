@@ -4,10 +4,10 @@
 //ex. "xzxzx" => 5
 
 //combos:
-x z xzx
-x zxz x 
-xzx z x
-xz x zx
+// x z xzx
+// x zxz x 
+// xzx z x
+// xz x zx
 
 function concatCombo(s) {
 

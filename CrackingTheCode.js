@@ -1,7 +1,7 @@
 function rotateMatrix(matrix) {
   
     return matrix
-  }
+}
   
   let mat1 = [["a","a"],["b","b"]];
   console.log(rotateMatrix(mat1));
