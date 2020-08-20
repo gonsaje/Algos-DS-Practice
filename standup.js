@@ -15,3 +15,5 @@ function firstDupe(arr) {
 }
 
 console.log(firstDupe([2,1,3,5,3,2]))
+
+// https://www.youtube.com/watch?v=XSdr_O-XVRQ

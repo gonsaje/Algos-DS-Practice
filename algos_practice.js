@@ -101,3 +101,57 @@ class Solution {
         return maxlength;
     }
 }
+
+// Write an algorithm that will identify valid IPv4 addresses in dot-decimal format. IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
+
+// Input to the function is guaranteed to be a single string.
+
+// Examples
+// Valid inputs:
+
+// 1.2.3.4
+// 123.45.67.89
+// Invalid inputs:
+
+// 1.2.3
+// 1.2.3.4.5
+// 123.456.78.90
+// 123.045.067.089
+// Note that leading zeros (e.g. 01.02.03.04) are considered invalid.
+
+function isValidIP(str) {
+    let codes = str.split(".");
+    let count = 0;
+    if (codes.length !== 4) return false;
+    codes.forEach(code => {
+      let num = parseInt(code);
+      if (num >= 0 && num <= 255) {
+        count += 1
+      }
+    })
+    
+    if (count === 4) return true;
+    
+    return false;
+  }
+
+  Test.describe("Sample tests", () => {
+
+    Test.assertEquals(isValidIP("0.0.0.0"), true);
+    Test.assertEquals(isValidIP("12.255.56.1"), true);
+    Test.assertEquals(isValidIP("137.255.156.100"), true);
+    Test.assertEquals(isValidIP(''), false);
+    Test.assertEquals(isValidIP('abc.def.ghi.jkl'), false);
+    Test.assertEquals(isValidIP('123.456.789.0'), false);
+    Test.assertEquals(isValidIP('12.34.56'), false);
+    Test.assertEquals(isValidIP('01.02.03.04'), false);
+    Test.assertEquals(isValidIP('256.1.2.3'), false);
+    Test.assertEquals(isValidIP('1.2.3.4.5'), false);
+    Test.assertEquals(isValidIP('123,45,67,89'), false);
+    Test.assertEquals(isValidIP('1e0.1e1.1e2.2e2'), false);
+    Test.assertEquals(isValidIP(' 1.2.3.4'), false);
+    Test.assertEquals(isValidIP('1.2.3.4 '), false);
+    Test.assertEquals(isValidIP('12.34.56.-7'), false);
+    Test.assertEquals(isValidIP('1.2.3.4\n'), false);
+    Test.assertEquals(isValidIP('\n1.2.3.4'), false);
+  });
