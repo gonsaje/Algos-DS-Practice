@@ -155,3 +155,44 @@ function isValidIP(str) {
     Test.assertEquals(isValidIP('1.2.3.4\n'), false);
     Test.assertEquals(isValidIP('\n1.2.3.4'), false);
   });
+
+
+//   Compress String
+//   Given a string s, eliminate consecutive duplicate characters from the string and return it.
+  
+//   That is, if a list contains repeated characters, they should be replaced with a single copy of the character. The order of the elements should not be changed.
+  
+//   Constraints
+  
+//   n ≤ 100,000 where n is the length of s
+//   Example 1
+//   Input
+  
+//   s = "aaaaaabbbccccaaaaddf"
+//   Output
+  
+//   "abcadf"
+//   Example 2
+//   Input
+  
+//   s = "a"
+//   Output
+  
+//   "a"
+
+  class Solution {
+    solve(s) {
+        if (s.length <= 1) {
+            return s;
+        }
+        
+        let arr = [];
+        for (let i=0; i<s.length;i++) {
+            if (arr[arr.length - 1] !== s[i]) {
+                arr.push(s[i])
+            }
+        }
+        
+        return arr.join("")
+    }
+}
