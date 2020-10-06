@@ -323,3 +323,15 @@ class Solution {
 // Output
 
 // true
+
+class Solution {
+    solve(num) {
+        let str = num.toString();
+        let revStr = "";
+        
+        for (let i = str.length - 1; i >= 0; i--) {
+            revStr += str[i]
+        }
+        return revStr === str;
+    }
+}
