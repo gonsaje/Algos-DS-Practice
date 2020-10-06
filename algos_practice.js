@@ -274,3 +274,27 @@ class Solution {
         return count;
     }
 }
+
+// Given a string of words delimited by spaces, reverse the order of words. For example, given "hello there my friend", return "friend my there hello".
+
+// Example 1
+// Input
+
+// sentence = "hello there my friend"
+// Output
+
+// "friend my there hello"
+
+class Solution {
+    solve(sentence) {
+        let words = sentence.split(" ");
+        let reverse = [];
+        
+        for (let i = words.length - 1; i >= 0; i--) {
+            reverse.push(words[i]);
+        }
+        
+        return reverse.join(' ');
+    }
+}
+
