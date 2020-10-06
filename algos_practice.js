@@ -298,3 +298,28 @@ class Solution {
     }
 }
 
+// Given a non-negative integer num, return whether it is a palindrome.
+
+// Bonus: Can you solve it without using strings?
+
+// Example 1
+// Input
+
+// num = 121
+// Output
+
+// true
+// Example 2
+// Input
+
+// num = 20200202
+// Output
+
+// true
+// Example 3
+// Input
+
+// num = 44
+// Output
+
+// true
