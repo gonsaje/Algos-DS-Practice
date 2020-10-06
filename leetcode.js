@@ -50,3 +50,11 @@
 
 // 1 <= chars.length <= 2000
 // chars[i] is a lower-case English letter, upper-case English letter, digit, or symbol.
+
+/**
+ * @param {character[]} chars
+ * @return {number}
+ */
+var compress = function(chars) {
+    
+};
