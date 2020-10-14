@@ -396,3 +396,38 @@ class Solution {
         
     }
 }
+
+// Vowels and Consonants Sort
+// Given a lowercase alphabet string s, return a string with all the vowels of s in sorted order followed by all the consonants of s in sorted order.
+
+// Note: vowels are ["a", "e", "i", "o", "u"] and consonants are all other characters.
+
+// Constraints
+
+// Length of s ≤ 50000
+// Example 1
+// Input
+
+// s = "decalin"
+// Output
+
+// "aeicdln"
+// Explanation
+
+// Vowels are "eai" which when sorted is "aei"
+// Consonants are "dcln" which when sorted is "cdln"
+// Their concatenation is "aeicdln"
+
+
+class Solution {
+    solve(s) {
+        let check = "aeiou";
+        let vowels = [];
+        let cons = [];
+        for (let i = 0; i < s.length; i++) {
+            check.includes(s[i]) ? vowels.push(s[i]) : cons.push(s[i]);
+        }
+        
+        return vowels.sort().join("") + cons.sort().join("");
+    }
+}
