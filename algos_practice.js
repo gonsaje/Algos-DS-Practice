@@ -431,3 +431,58 @@ class Solution {
         return vowels.sort().join("") + cons.sort().join("");
     }
 }
+
+/**************************************************************************************
+Write a function `isPowerOfTwo(num)` that takes in a number and returns a boolean indicating
+whether or not the number is a power of two.
+
+The powers of two are 1, 2, 4, 8, 16, 32, 64, ... etc
+
+Examples:
+
+isPowerOfTwo(1);  // => true
+isPowerOfTwo(32); // => true
+isPowerOfTwo(12); // => false
+isPowerOfTwo(33); // => false
+isPowerOfTwo(-8); // => false
+
+Difficulty: Medium
+*************************************************************************************/
+
+function isPowerOfTwo(num) {
+    var i = num;
+    while (i > 0) {
+        if (i === 1) return true;
+        i /= 2; 
+    }
+
+    return false;
+}
+
+/**************************************************************************************
+Write a function `usernames(names)` that takes in an array of names. The function
+should return an array containing the corresponding usernames. See the examples.
+
+Examples:
+
+var names = [
+  'Oscar Alvarez',
+  'Danny Catalano',
+  'Kurstie Ozuna',
+  'Matt Haws'
+];
+
+usernames(names); // => [ 'oalvarez', 'dcatalano', 'kozuna', 'mhaws' ]
+
+Difficulty: Medium
+*************************************************************************************/
+
+function usernames(names) {
+    var usn = [];
+    for (var i = 0; i < names.length; i++) {
+      var name = names[i].split(" ");
+      usn.push(name[0][0].toLowerCase() + name[1].toLowerCase());
+    }
+  
+    return usn;
+  }
