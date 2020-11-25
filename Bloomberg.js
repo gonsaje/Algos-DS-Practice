@@ -39,13 +39,16 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+
+// space complexity: O(n) => sumArr's size is dependent on the size of the argument
+// time complexity: O(n^2) nested loop
 var runningSum = function(nums) {
-    let sumArr = [];
+    let sumArr = []; // O(n) 
     
-    for (let i = nums.length - 1; i >= 0; i--) {
+    for (let i = nums.length - 1; i >= 0; i--) { //O(n)
         let sum = nums[i];
         
-        for (j = i - 1; j >= 0; j--) {
+        for (j = i - 1; j >= 0; j--) { // O(n)
             sum += nums[j];
         }
         
@@ -56,6 +59,8 @@ var runningSum = function(nums) {
 };
 
 // faster version
+// space complexity: O(1) => we're modifying the original array and therefore not changing space
+// time complexity: O(n) => we're looping through once  
 
 var runningSum = function(nums) {
     for(let i = 1;i < nums.length; i++){
